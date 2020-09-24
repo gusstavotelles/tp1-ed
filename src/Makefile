@@ -13,15 +13,15 @@ tipoitem.o: ${HEADERS_DIR}/TipoItem.hpp  ${HEADERS_DIR}/TipoItem.cpp
 
 tipocelula.o: ${HEADERS_DIR}/TipoCelula.hpp  ${HEADERS_DIR}/TipoCelula.cpp 
 	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/TipoCelula.cpp -o tipocelula.o
+
+pilha.o: ${HEADERS_DIR}/Pilha.hpp  ${HEADERS_DIR}/Pilha.cpp 
+	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Pilha.cpp -o pilha.o
 	
 fila.o: ${HEADERS_DIR}/Fila.hpp  ${HEADERS_DIR}/Fila.cpp 
 	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Fila.cpp -o fila.o
 
 lista.o: ${HEADERS_DIR}/Lista.hpp  ${HEADERS_DIR}/Lista.cpp 
 	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Lista.cpp -o lista.o
-
-pilha.o: ${HEADERS_DIR}/Pilha.hpp  ${HEADERS_DIR}/Pilha.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Pilha.cpp -o pilha.o
 
 nave.o: ${HEADERS_DIR}/Nave.cpp 
 	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Nave.cpp -o nave.o
