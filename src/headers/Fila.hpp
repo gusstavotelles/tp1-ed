@@ -12,7 +12,8 @@ class Fila
         virtual void Enfileira(TipoItem item) = 0;
         virtual TipoItem Desenfileira() = 0;
         virtual void Limpa() = 0;
+
     protected:
-    int tamanho;
+        int tamanho;
 };
 #endif
