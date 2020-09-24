@@ -15,11 +15,11 @@ FilaEncadeada::~FilaEncadeada()
 
 void FilaEncadeada::Enfileira(TipoItem item)
 {
-    TipoCelula *nova;
-    nova = new TipoCelula();
-    nova->item = item;
-    this->tras->prox = nova;
-    this->tras = nova;
+    TipoCelula *celula;
+    celula = new TipoCelula();
+    celula->item = item;
+    this->tras->prox = celula;
+    this->tras = celula;
     this->tamanho++;
 }
 

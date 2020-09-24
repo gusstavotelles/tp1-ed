@@ -48,38 +48,38 @@ void ListaEncadeada::SetItem(TipoItem item, int pos)
 
 void ListaEncadeada::InsereInicio(TipoItem item)
 {
-    TipoCelula *nova;
-    nova = new TipoCelula();
-    nova->item = item;
-    nova->prox = this->primeiro->prox;
-    this->primeiro->prox = nova;
+    TipoCelula *celula;
+    celula = new TipoCelula();
+    celula->item = item;
+    celula->prox = this->primeiro->prox;
+    this->primeiro->prox = celula;
     this->tamanho++;
-    if (nova->prox == NULL)
-        this->ultimo = nova;
+    if (celula->prox == NULL)
+        this->ultimo = celula;
 };
 
 void ListaEncadeada::InsereFinal(TipoItem item)
 {
-    TipoCelula *nova;
-    nova = new TipoCelula();
-    nova->item = item;
-    this->ultimo->prox = nova;
-    this->ultimo = nova;
+    TipoCelula *celula;
+    celula = new TipoCelula();
+    celula->item = item;
+    this->ultimo->prox = celula;
+    this->ultimo = celula;
     this->tamanho++;
 };
 
 void ListaEncadeada::InserePosicao(TipoItem item, int pos)
 {
-    TipoCelula *p, *nova;
+    TipoCelula *p, *celula;
     p = Posiciona(pos, true);
-    nova = new TipoCelula();
-    nova->item = item;
+    celula = new TipoCelula();
+    celula->item = item;
 
-    nova->prox = p->prox;
-    p->prox = nova;
+    celula->prox = p->prox;
+    p->prox = celula;
     this->tamanho++;
-    if (nova->prox == NULL)
-        this->ultimo = nova;
+    if (celula->prox == NULL)
+        this->ultimo = celula;
 };
 
 TipoItem ListaEncadeada::RemoveInicio()

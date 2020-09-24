@@ -13,11 +13,12 @@ PilhaEncadeada::~PilhaEncadeada()
 
 void PilhaEncadeada::Empilha(TipoItem item)
 {
-    TipoCelula *nova;
-    nova = new TipoCelula();
-    nova->item = item;
-    nova->prox = this->topo;
-    this->topo = nova;
+    TipoCelula *celula;
+    celula = new TipoCelula();
+
+    celula->item = item;
+    celula->prox = this->topo;
+    this->topo = celula;
     this->tamanho++;
 };
 

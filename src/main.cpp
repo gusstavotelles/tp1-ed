@@ -1,4 +1,4 @@
-#include <cstdio> // em C substituir por #include <stdio.h>
+#include <cstdio>
 #include <iostream>
 #include "headers/PilhaEncadeada.hpp"
 #include "headers/ListaEncadeada.hpp"
@@ -37,34 +37,44 @@ int main()
     switch (operacao)
     {
     case 0:
+    {
       TipoItem itemComb = navesOk->Desempilha();
-      Nave n = itemComb.GetNave();
-      n.Combate();
+      Nave n1 = itemComb.GetNave();
+      n1.Combate();
       navesComb->InsereFinal(itemComb);
       break;
+    }
 
     case -1:
+    {
       TipoItem consertaNave = navesAvariadas->Desenfileira();
-      Nave n = consertaNave.GetNave();
+      Nave n2 = consertaNave.GetNave();
       navesOk->Empilha(consertaNave);
-      n.Consertada();
+      n2.Consertada();
       break;
+    }
 
     case -2:
-      navesOk->Imprime() 
+    {
+      navesOk->Imprime();
       break;
+    }
 
-    case -3:
+    case (-3):
+    {
       navesAvariadas->Imprime();
       break;
+    }
 
     default:
+    {
       int codNave = operacao;
-      TipoItem tInsereAvaria = navesComb->RemoveItem(codNave);
-      Nave n = tInsereAvaria.GetNave();
-      navesAvariadas->Enfileira(tInsereAvaria);
-      n.Avaria();
+      TipoItem danificaNave = navesComb->RemoveItem(codNave);
+      Nave n3 = danificaNave.GetNave();
+      navesAvariadas->Enfileira(danificaNave);
+      n3.Avaria();
       break;
+    }
     }
   }
   return 0;

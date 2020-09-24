@@ -3,37 +3,36 @@ CC=g++
 CFLAGS=-Wall -Wextra 
 EXEC=./tp1.exe 
 TMPOUT=./tp1.testresult
-HEADERS_DIR = ./headers
 
 $(EXEC): main.cpp nave.o tipoitem.o tipocelula.o pilha.o fila.o lista.o pilhaencadeada.o listaencadeada.o filaencadeada.o  
 	$(CC) $(CFLAGS) main.cpp tipoitem.o tipocelula.o nave.o pilha.o fila.o lista.o pilhaencadeada.o listaencadeada.o filaencadeada.o -o $(EXEC)
 
-tipoitem.o: ${HEADERS_DIR}/TipoItem.hpp  ${HEADERS_DIR}/TipoItem.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/TipoItem.cpp -o tipoitem.o
+tipoitem.o: ./headers/TipoItem.hpp  ./headers/TipoItem.cpp 
+	$(CC) $(CFLAGS) -c ./headers/TipoItem.cpp -o tipoitem.o
 
-tipocelula.o: ${HEADERS_DIR}/TipoCelula.hpp  ${HEADERS_DIR}/TipoCelula.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/TipoCelula.cpp -o tipocelula.o
+tipocelula.o: ./headers/TipoCelula.hpp  ./headers/TipoCelula.cpp 
+	$(CC) $(CFLAGS) -c ./headers/TipoCelula.cpp -o tipocelula.o
 
-pilha.o: ${HEADERS_DIR}/Pilha.hpp  ${HEADERS_DIR}/Pilha.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Pilha.cpp -o pilha.o
+pilha.o: ./headers/Pilha.hpp  ./headers/Pilha.cpp 
+	$(CC) $(CFLAGS) -c ./headers/Pilha.cpp -o pilha.o
 	
-fila.o: ${HEADERS_DIR}/Fila.hpp  ${HEADERS_DIR}/Fila.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Fila.cpp -o fila.o
+fila.o: ./headers/Fila.hpp  ./headers/Fila.cpp 
+	$(CC) $(CFLAGS) -c ./headers/Fila.cpp -o fila.o
 
-lista.o: ${HEADERS_DIR}/Lista.hpp  ${HEADERS_DIR}/Lista.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Lista.cpp -o lista.o
+lista.o: ./headers/Lista.hpp  ./headers/Lista.cpp 
+	$(CC) $(CFLAGS) -c ./headers/Lista.cpp -o lista.o
 
-nave.o: ${HEADERS_DIR}/Nave.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/Nave.cpp -o nave.o
+nave.o: ./headers/Nave.cpp 
+	$(CC) $(CFLAGS) -c ./headers/Nave.cpp -o nave.o
 
-pilhaencadeada.o: ${HEADERS_DIR}/PilhaEncadeada.hpp  ${HEADERS_DIR}/PilhaEncadeada.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/PilhaEncadeada.cpp -o pilhaencadeada.o 
+pilhaencadeada.o: ./headers/PilhaEncadeada.hpp  ./headers/PilhaEncadeada.cpp 
+	$(CC) $(CFLAGS) -c ./headers/PilhaEncadeada.cpp -o pilhaencadeada.o 
 
-listaencadeada.o: ${HEADERS_DIR}/ListaEncadeada.hpp  ${HEADERS_DIR}/ListaEncadeada.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/ListaEncadeada.cpp -o listaencadeada.o  
+listaencadeada.o: ./headers/ListaEncadeada.hpp  ./headers/ListaEncadeada.cpp 
+	$(CC) $(CFLAGS) -c ./headers/ListaEncadeada.cpp -o listaencadeada.o  
 
-filaencadeada.o: ${HEADERS_DIR}/FilaEncadeada.hpp  ${HEADERS_DIR}/FilaEncadeada.cpp 
-	$(CC) $(CFLAGS) -c ${HEADERS_DIR}/FilaEncadeada.cpp -o filaencadeada.o  
+filaencadeada.o: ./headers/FilaEncadeada.hpp  ./headers/FilaEncadeada.cpp 
+	$(CC) $(CFLAGS) -c ./headers/FilaEncadeada.cpp -o filaencadeada.o  
  
 test: $(EXEC)
 	@bash run_tests.sh $(EXEC) $(TMPOUT)
