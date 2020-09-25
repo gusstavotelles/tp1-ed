@@ -28,7 +28,7 @@ TipoItem PilhaEncadeada::Desempilha()
     TipoCelula *p;
     if (this->tamanho == 0)
     {
-        throw "A pilha está vazia!";
+        throw "Pilha vazia!";
     }
     p = this->topo;
     aux = p->item;

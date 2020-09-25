@@ -29,7 +29,7 @@ TipoItem FilaEncadeada::Desenfileira()
     TipoItem aux;
     if (this->tamanho == 0)
     {
-        throw "Fila está vazia!";
+        throw "Fila vazia!";
     }
     aux = this->frente->prox->item;
     p = this->frente;

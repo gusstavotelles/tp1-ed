@@ -8,15 +8,15 @@
 using namespace std;
 int main()
 {
-  int num_frotas;
-  scanf("%d", &num_frotas);
+  int qtdFrota;
+  scanf("%d", &qtdFrota);
   int i;
 
   PilhaEncadeada *navesOk = new PilhaEncadeada();
   ListaEncadeada *navesComb = new ListaEncadeada();
   FilaEncadeada *navesAvariadas = new FilaEncadeada();
 
-  for (i = 0; i < num_frotas; i++)
+  for (i = 0; i < qtdFrota; i++)
   {
     int idNave;
     scanf("%d", &idNave);
@@ -60,7 +60,7 @@ int main()
       break;
     }
 
-    case (-3):
+    case -3:
     {
       navesAvariadas->Imprime();
       break;
